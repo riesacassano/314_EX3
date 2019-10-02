@@ -26,3 +26,5 @@ function extract_channels(filename)
     B = image[:,:,3];
     return R, G, B
 end
+
+println("Reset with git reset --mixed")
