@@ -28,3 +28,18 @@ function extract_channels(filename)
 end
 
 println("Reset with git reset --mixed")
+(R, G, B) = extract_channels("el-capitan.png")
+image2 = zeros(360,640,3);
+image2[:,:,1] = G;
+image2[:,:,2] = B;
+image2[:,:,3] = R;
+##
+clf()
+subplot(1,2,1);
+imshow(el_capitan);
+title("original");
+axis("off");
+subplot(1,2,2);
+imshow(image2);
+title("RGB -> GBR");
+axis("off");
