@@ -1,3 +1,5 @@
+# Problem 1, part A
+
 using PyPlot;
 el_capitan = imread("el-capitan.png");
 imshow(el_capitan);
@@ -43,3 +45,22 @@ subplot(1,2,2);
 imshow(image2);
 title("RGB -> GBR");
 axis("off");
+
+# Problem 1, part B
+"""
+shift_red_up(filename, N)
+
+This function takes an image file name ("filename"),
+
+= Args:
+
+- arg1 (str): filename of image
+- arg2 (int): number of pixels to shift by
+
+= Returns:
+
+- image ()
+"""
+function shift_red_up(filename, N)
+
+end
