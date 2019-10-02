@@ -8,7 +8,8 @@ imshow(el_capitan);
 """
 extract_channels(filename)
 
-This function takes an image file name ("filename"), loads it, displays it, extracts the red, blue, and green channels into separate variables and returns those variables.
+This function takes an image file name ("filename"), loads it, displays it,
+    extracts the red, blue, and green channels into separate variables and returns those variables.
 
 = Args:
 
@@ -69,7 +70,7 @@ function shift_red_up(filename, N)
     original = imread(filename);
     R_channel = vcat(original[N+1:end,:,1], original[1:N,:,1]);
     shifted_image = cat(R_channel, original[:,:,2:end], dims = 3)
-    
+
 # display original and shifted image
     clf()
     subplot(1,2,1);
@@ -83,3 +84,5 @@ function shift_red_up(filename, N)
 
     return shifted_image
 end
+
+shift_red_up("el-capitan.png", 180);
