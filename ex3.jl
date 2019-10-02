@@ -46,11 +46,14 @@ imshow(image2);
 title("RGB -> GBR");
 axis("off");
 
-# Problem 1, part B
+## Problem 1, part B
 """
 shift_red_up(filename, N)
 
-This function takes an image file name ("filename"),
+This function takes an image file name ("filename") and number ("N").
+    Shifts red channel on image circularly up by N pixels.
+    Displays original image and shifted image side by side.
+    Returns shifted image as an array.
 
 = Args:
 
@@ -59,8 +62,24 @@ This function takes an image file name ("filename"),
 
 = Returns:
 
-- image ()
+- shifted_image (Array{Float32,3}): image shifted by specified number of pixels
+
 """
 function shift_red_up(filename, N)
+    original = imread(filename);
+    R_channel = vcat(original[N+1:end,:,1], original[1:N,:,1]);
+    shifted_image = cat(R_channel, original[:,:,2:end], dims = 3)
+    
+# display original and shifted image
+    clf()
+    subplot(1,2,1);
+    imshow(original);
+    title("original");
+    axis("off");
+    subplot(1,2,2);
+    imshow(shifted_image);
+    title("shifted");
+    axis("off");
 
+    return shifted_image
 end
